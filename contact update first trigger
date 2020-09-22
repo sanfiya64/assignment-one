@@ -1,0 +1,21 @@
+trigger contactupdate on Account (after insert) 
+{
+    List<Contact> clist = new List<Contact>(); 
+    for(Account a : Trigger.New)
+    
+        {
+          if(Trigger.isInsert != null)    
+        
+        {
+        Contact con = new Contact();
+        con.AccountId = a.id;
+        con.FirstName = 'Info';
+       con.LastName = 'Default';
+        con.Email = 'info@websitedomain.tld';
+        clist.add(con); 
+    }
+             insert clist;
+    
+        }
+   
+    }  
