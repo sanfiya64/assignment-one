@@ -1,0 +1,11 @@
+@isTest
+public class contactTesting 
+{
+    @isTest static void testingContact()
+    {
+        Account a=new Account(Name='thirdcontact');
+        Contact c=new Contact(AccountId=a.Id,FirstName = 'Info',LastName = 'Default',Email = 'info@websitedomain.tld');
+       insert c;     
+    }
+
+}
