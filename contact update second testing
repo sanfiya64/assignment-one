@@ -1,0 +1,19 @@
+@isTest
+public class contactnewTesting {
+    @isTest static void updateMethod()
+    {
+        Test.startTest();
+        Account ac=new Account(Name='final class');
+          insert ac;
+        Contact c=new Contact(FirstName='sam',LastName='john',AccountId=ac.Id);
+        List<contact> l=new List<Contact>();
+         insert c;
+         if(l.size()==1)
+            {
+               System.assertEquals(ac.Only_Default_Contact__c=true,ac.Only_Default_Contact__c=true);
+            }
+        
+        Test.stopTest();
+        
+       }
+}  
