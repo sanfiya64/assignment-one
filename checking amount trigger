@@ -1,0 +1,15 @@
+trigger checkingamount on Opportunity (after insert) {
+    for ( Opportunity opp: trigger.new )
+    {
+        for(Account a : [select id from Account where id = : opp.AccountId] )
+        {        
+            if(opp.amount > 20000)
+        {
+            a.is_gold__c = true ;
+            update a;
+        }
+        
+        }
+
+}
+}
