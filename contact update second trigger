@@ -1,0 +1,14 @@
+trigger three on Contact (after insert) 
+{
+    for(Contact c: [select id from Contact where id IN : trigger.new])
+    {
+        Account a= [select Only_Default_Contact__c from account where id =: c.AccountId];
+        List<Contact> cl= [select Id from contact where AccountId  =: a.id]
+         if(cl.size() == 1)
+       {
+           a.Only_Default_Contact__c=true;
+		update a;
+       }
+    }
+
+}
