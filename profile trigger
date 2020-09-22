@@ -1,0 +1,18 @@
+trigger profile on Account (after update) 
+{
+   
+    for(Account acc:trigger.new)
+    {
+        if(acc.website != null)
+        {
+            for(Contact con:[select id from Contact where AccountId = : acc.id])
+            {
+           
+           con.Profile__c= acc.Website+'/'+con.FirstName.SubString(1,2)+con.LastName;
+		update con;
+             
+        }
+        }
+        update acc;
+    }
+}
