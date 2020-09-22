@@ -1,0 +1,18 @@
+@isTest
+public class amountTesting 
+{
+    @isTest static void checkingmethod()
+    {
+        Account acc=new Account(Name='sample');
+        insert acc;
+        Opportunity o=new Opportunity(Name='testing',CloseDate=Date.valueOf('2020-10-10'),StageName='Closed Won',
+                                      AccountId=acc.Id,Amount=22000);
+       
+        insert o;
+        System.assertEquals(acc.is_gold__c=True,acc.is_gold__c=True);
+        
+        
+        
+    }
+
+}
