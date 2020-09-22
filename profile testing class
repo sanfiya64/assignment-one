@@ -1,0 +1,17 @@
+@isTest
+public class profileTesting
+{
+    @isTest static void testingProcess()
+    {
+        Account ac=new Account(Name='profilecontact',Website='www.xyz.com');
+        insert ac;
+        Contact c=new Contact(AccountId=ac.Id ,FirstName='Ken',LastName='Adams');
+         insert c;
+         update c;
+        update ac;
+        boolean b=String.isNotBlank(c.Profile__c);
+        System.assertEquals(false,b);
+        
+    }
+
+}
